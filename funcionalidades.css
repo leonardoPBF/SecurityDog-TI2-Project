@@ -28,7 +28,7 @@ p {
     border-radius: 40px;
     text-align: center;
     position: relative;
-    bottom: 80px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .contenedor-func p{
@@ -40,6 +40,7 @@ p {
     width: 200px;
     border-radius: 20px;
     margin-bottom: 20px;
+    margin: 10px;
 }
 
 .cont-pinguino {
@@ -55,23 +56,14 @@ p {
 @media (max-width: 942px) {
     .contenedor-func{
         width: 100%;
+        height: 100%;
         bottom: 80px;
     }
 
-    .cont-pinguino {
-        left: 0%;
-        bottom: 400px;
-    }
-
-    .function {
-        width: 90%;
-    }
-
     .contenedor-func img {
-        display: none;
-        border-radius: 20px;
-        margin-bottom: 20px;
-    }
+      width: 100px;
+      height: 100px;
+  }
 }
 
 /* 
@@ -82,12 +74,6 @@ p {
     --penguin-skin: gray;
   }
   
-  body {    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: clip;
-  }
   
   .left-mountain {
     width: 300px;

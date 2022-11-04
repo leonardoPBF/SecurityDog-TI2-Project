@@ -37,3 +37,10 @@ h1 {
     margin: 20px;
     text-align: center;
 }
+
+.lista_precios{
+    box-shadow: 1px 1px 1px black;
+    position: relative;
+    left: 37%;
+    margin-bottom: 20px;
+}

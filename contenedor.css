@@ -1,7 +1,7 @@
 .contenedor {
     width: 80%;
     height: 80%;
-    background-color: aqua;
+    background-color: white;
     margin: 25px auto 50px auto;
     border-radius: 20px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -82,4 +82,26 @@
         border-bottom-right-radius: 20px;
         border-bottom-left-radius: 20px;
     }
+}
+
+.contenedor-cod {
+    background-color: white;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: 10px;
+    padding-top: 30px;
+    padding-right: -200px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+pre {
+    position: relative;
+    left: -80px;
+}
+
+.title-codigo {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
 }
