@@ -44,243 +44,243 @@
         
         <div class="contenedor-cod">
             <pre>
-	<font color="#5e6d03">#define</font> <font color="#d35400">BLYNK_TEMPLATE_ID</font> <font color="#005c5f">&#34;TMPLFHmqV_5M&#34;</font>
-	<font color="#5e6d03">#define</font> <font color="#d35400">BLYNK_DEVICE_NAME</font> <font color="#005c5f">&#34;securityDog&#34;</font>
-	<font color="#5e6d03">#define</font> <font color="#000000">BLYNK_AUTH_TOKEN</font> <font color="#005c5f">&#34;L5qdZx_-HoPytk-bfTyzMa5Bwt-S-Hgk&#34;</font>
-	<font color="#5e6d03">#define</font> <font color="#d35400">BLYNK_PRINT</font> <b><font color="#d35400">Serial</font></b>
+			<font color="#5e6d03">#define</font> <font color="#d35400">BLYNK_TEMPLATE_ID</font> <font color="#005c5f">&#34;TMPLFHmqV_5M&#34;</font>
+			<font color="#5e6d03">#define</font> <font color="#d35400">BLYNK_DEVICE_NAME</font> <font color="#005c5f">&#34;securityDog&#34;</font>
+			<font color="#5e6d03">#define</font> <font color="#000000">BLYNK_AUTH_TOKEN</font> <font color="#005c5f">&#34;L5qdZx_-HoPytk-bfTyzMa5Bwt-S-Hgk&#34;</font>
+			<font color="#5e6d03">#define</font> <font color="#d35400">BLYNK_PRINT</font> <b><font color="#d35400">Serial</font></b>
 
-	<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><font color="#d35400">ESP8266WiFi</font><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
-	<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><font color="#5e6d03">ESP8266HTTPClient</font><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
+			<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><font color="#d35400">ESP8266WiFi</font><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
+			<font color="#5e6d03">#include</font> <font color="#434f54">&lt;</font><font color="#5e6d03">ESP8266HTTPClient</font><font color="#434f54">.</font><font color="#000000">h</font><font color="#434f54">&gt;</font>
 
-	<font color="#434f54">&#47;&#47;</font>
-	<font color="#00979c">String</font> <font color="#000000">apiKey</font> <font color="#434f54">=</font> <font color="#005c5f">&#34;1925074&#34;</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;bot de whatsapp</font>
-	<font color="#00979c">String</font> <font color="#000000">phone_number</font> <font color="#434f54">=</font> <font color="#005c5f">&#34;+51941153390&#34;</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; numero celular</font>
-	<font color="#00979c">String</font> <font color="#000000">url</font><font color="#000000">;</font>
-	<font color="#00979c">char</font> <font color="#000000">auth</font><font color="#000000">[</font><font color="#000000">]</font> <font color="#434f54">=</font> <font color="#000000">BLYNK_AUTH_TOKEN</font><font color="#000000">;</font>
-	<font color="#434f54">&#47;&#47;</font>
+			<font color="#434f54">&#47;&#47;</font>
+			<font color="#00979c">String</font> <font color="#000000">apiKey</font> <font color="#434f54">=</font> <font color="#005c5f">&#34;1925074&#34;</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;bot de whatsapp</font>
+			<font color="#00979c">String</font> <font color="#000000">phone_number</font> <font color="#434f54">=</font> <font color="#005c5f">&#34;+51941153390&#34;</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; numero celular</font>
+			<font color="#00979c">String</font> <font color="#000000">url</font><font color="#000000">;</font>
+			<font color="#00979c">char</font> <font color="#000000">auth</font><font color="#000000">[</font><font color="#000000">]</font> <font color="#434f54">=</font> <font color="#000000">BLYNK_AUTH_TOKEN</font><font color="#000000">;</font>
+			<font color="#434f54">&#47;&#47;</font>
 
-	<font color="#434f54">&#47;&#47; Configuracion de internet</font>
-	<font color="#00979c">char</font> <font color="#000000">ssid</font><font color="#000000">[</font><font color="#000000">]</font> <font color="#434f54">=</font> <font color="#005c5f">&#34;TP-Link_4342&#34;</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; Red wifi nombre</font>
-	<font color="#00979c">char</font> <font color="#000000">pass</font><font color="#000000">[</font><font color="#000000">]</font> <font color="#434f54">=</font> <font color="#005c5f">&#34;78066809&#34;</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; contraseña wifi</font>
+			<font color="#434f54">&#47;&#47; Configuracion de internet</font>
+			<font color="#00979c">char</font> <font color="#000000">ssid</font><font color="#000000">[</font><font color="#000000">]</font> <font color="#434f54">=</font> <font color="#005c5f">&#34;TP-Link_4342&#34;</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; Red wifi nombre</font>
+			<font color="#00979c">char</font> <font color="#000000">pass</font><font color="#000000">[</font><font color="#000000">]</font> <font color="#434f54">=</font> <font color="#005c5f">&#34;78066809&#34;</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; contraseña wifi</font>
 
-	<font color="#434f54">&#47;&#47;Definiendo para el ULTRASONIDO</font>
-	<font color="#5e6d03">#define</font> <font color="#000000">trigger</font> <font color="#000000">5</font>
-	<font color="#5e6d03">#define</font> <font color="#000000">echo</font> <font color="#000000">4</font>
-	<font color="#434f54">&#47;&#47;Sonido</font>
-	<font color="#00979c">int</font> <font color="#000000">tonePin</font> <font color="#434f54">=</font> <font color="#000000">2</font><font color="#434f54">,</font> <font color="#000000">pinSound</font><font color="#434f54">=</font><font color="#000000">2</font><font color="#000000">;</font>
-	<font color="#00979c">String</font> <font color="#000000">mensajeAlarma</font><font color="#434f54">=</font><font color="#005c5f">&#34;Alguien entro a tu lugar restringido \n&#34;</font><font color="#000000">;</font>
+			<font color="#434f54">&#47;&#47;Definiendo para el ULTRASONIDO</font>
+			<font color="#5e6d03">#define</font> <font color="#000000">trigger</font> <font color="#000000">5</font>
+			<font color="#5e6d03">#define</font> <font color="#000000">echo</font> <font color="#000000">4</font>
+			<font color="#434f54">&#47;&#47;Sonido</font>
+			<font color="#00979c">int</font> <font color="#000000">tonePin</font> <font color="#434f54">=</font> <font color="#000000">2</font><font color="#434f54">,</font> <font color="#000000">pinSound</font><font color="#434f54">=</font><font color="#000000">2</font><font color="#000000">;</font>
+			<font color="#00979c">String</font> <font color="#000000">mensajeAlarma</font><font color="#434f54">=</font><font color="#005c5f">&#34;Alguien entro a tu lugar restringido \n&#34;</font><font color="#000000">;</font>
 
-	<font color="#00979c">int</font> <font color="#000000">contador</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font>
+			<font color="#00979c">int</font> <font color="#000000">contador</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font>
 
-	<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font>
-	<font color="#000000">{</font>
-	 &nbsp;<font color="#434f54">&#47;&#47; Debug console</font>
-	 &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">115200</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;<b><font color="#d35400">Blynk</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">auth</font><font color="#434f54">,</font> <font color="#000000">ssid</font><font color="#434f54">,</font> <font color="#000000">pass</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;<b><font color="#d35400">WiFi</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">ssid</font><font color="#434f54">,</font><font color="#000000">pass</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">trigger</font><font color="#434f54">,</font><font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">echo</font><font color="#434f54">,</font><font color="#00979c">INPUT</font><font color="#000000">)</font><font color="#000000">;</font>
-	<font color="#000000">}</font>
+			<font color="#00979c">void</font> <font color="#5e6d03">setup</font><font color="#000000">(</font><font color="#000000">)</font>
+			<font color="#000000">{</font>
+			 &nbsp;<font color="#434f54">&#47;&#47; Debug console</font>
+			 &nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">115200</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;<b><font color="#d35400">Blynk</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">auth</font><font color="#434f54">,</font> <font color="#000000">ssid</font><font color="#434f54">,</font> <font color="#000000">pass</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;<b><font color="#d35400">WiFi</font></b><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#000000">ssid</font><font color="#434f54">,</font><font color="#000000">pass</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">trigger</font><font color="#434f54">,</font><font color="#00979c">OUTPUT</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;<font color="#d35400">pinMode</font><font color="#000000">(</font><font color="#000000">echo</font><font color="#434f54">,</font><font color="#00979c">INPUT</font><font color="#000000">)</font><font color="#000000">;</font>
+			<font color="#000000">}</font>
 
 
-	<b><font color="#d35400">WidgetTerminal</font></b> <font color="#000000">terminal</font><font color="#000000">(</font><font color="#00979c">V0</font><font color="#000000">)</font><font color="#000000">;</font><font color="#434f54">&#47;&#47;Herramienta para recivir texto de entreda de la app de blynk, pin virtual</font>
-	
-	<font color="#d35400">BLYNK_WRITE</font><font color="#000000">(</font><font color="#00979c">V0</font><font color="#000000">)</font> <font color="#000000">{</font> &nbsp;&nbsp;&nbsp;&nbsp;
-	 &nbsp;<font color="#5e6d03">if</font><font color="#000000">(</font><font color="#00979c">String</font><font color="#000000">(</font><font color="#005c5f">&#34;contador&#34;</font><font color="#000000">)</font> <font color="#434f54">==</font> <font color="#000000">param</font><font color="#434f54">.</font><font color="#000000">asStr</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">{</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#000000">terminal</font><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;La cantidad detectada es:&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#000000">terminal</font><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">contador</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;<font color="#000000">}</font><font color="#5e6d03">else</font><font color="#000000">{</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#000000">terminal</font><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;No se reconoce ninguna accion&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;<font color="#000000">}</font>
-	 &nbsp;<font color="#000000">terminal</font><font color="#434f54">.</font><font color="#d35400">flush</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font><font color="#434f54">&#47;&#47;esperara a que se complete la transmision de datos</font>
-	<font color="#000000">}</font>
+			<b><font color="#d35400">WidgetTerminal</font></b> <font color="#000000">terminal</font><font color="#000000">(</font><font color="#00979c">V0</font><font color="#000000">)</font><font color="#000000">;</font><font color="#434f54">&#47;&#47;Herramienta para recivir texto de entreda de la app de blynk, pin virtual</font>
 
-	<font color="#00979c">int</font> <font color="#000000">encendido</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font>
-	<font color="#00979c">int</font> <font color="#000000">modoSonoro</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font>
+			<font color="#d35400">BLYNK_WRITE</font><font color="#000000">(</font><font color="#00979c">V0</font><font color="#000000">)</font> <font color="#000000">{</font> &nbsp;&nbsp;&nbsp;&nbsp;
+			 &nbsp;<font color="#5e6d03">if</font><font color="#000000">(</font><font color="#00979c">String</font><font color="#000000">(</font><font color="#005c5f">&#34;contador&#34;</font><font color="#000000">)</font> <font color="#434f54">==</font> <font color="#000000">param</font><font color="#434f54">.</font><font color="#000000">asStr</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">{</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#000000">terminal</font><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;La cantidad detectada es:&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#000000">terminal</font><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">contador</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;<font color="#000000">}</font><font color="#5e6d03">else</font><font color="#000000">{</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#000000">terminal</font><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;No se reconoce ninguna accion&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;<font color="#000000">}</font>
+			 &nbsp;<font color="#000000">terminal</font><font color="#434f54">.</font><font color="#d35400">flush</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font><font color="#434f54">&#47;&#47;esperara a que se complete la transmision de datos</font>
+			<font color="#000000">}</font>
 
-	<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font>
-	<font color="#000000">{</font>
-	 &nbsp;<b><font color="#d35400">Blynk</font></b><font color="#434f54">.</font><font color="#d35400">run</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;<font color="#5e6d03">if</font><font color="#000000">(</font><font color="#000000">encendido</font><font color="#434f54">==</font><font color="#000000">1</font><font color="#000000">)</font><font color="#000000">{</font>
-	 &nbsp;<font color="#5e6d03">if</font><font color="#000000">(</font><font color="#000000">SensorHCSR04</font><font color="#000000">(</font><font color="#000000">)</font><font color="#434f54">&lt;</font><font color="#000000">50.0</font> <font color="#434f54">&amp;&amp;</font> <font color="#000000">modoSonoro</font><font color="#434f54">==</font><font color="#000000">1</font><font color="#000000">)</font><font color="#000000">{</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">contador</font><font color="#434f54">=</font><font color="#000000">contador</font><font color="#434f54">+</font><font color="#000000">1</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">contador</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">message_to_whatsapp</font><font color="#000000">(</font><font color="#000000">mensajeAlarma</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Blynk</font></b><font color="#434f54">.</font><font color="#d35400">virtualWrite</font><font color="#000000">(</font><font color="#00979c">V0</font><font color="#434f54">,</font> <font color="#000000">mensajeAlarma</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">alarma</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;<font color="#000000">}</font><font color="#5e6d03">else</font> <font color="#5e6d03">if</font><font color="#000000">(</font><font color="#000000">SensorHCSR04</font><font color="#000000">(</font><font color="#000000">)</font><font color="#434f54">&lt;</font><font color="#000000">50.0</font> <font color="#434f54">&amp;&amp;</font> <font color="#000000">modoSonoro</font><font color="#434f54">==</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">{</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">contador</font><font color="#434f54">=</font><font color="#000000">contador</font><font color="#434f54">+</font><font color="#000000">1</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">contador</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">message_to_whatsapp</font><font color="#000000">(</font><font color="#000000">mensajeAlarma</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Blynk</font></b><font color="#434f54">.</font><font color="#d35400">virtualWrite</font><font color="#000000">(</font><font color="#00979c">V0</font><font color="#434f54">,</font> <font color="#000000">mensajeAlarma</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">3000</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;<font color="#000000">}</font>
-	 &nbsp;&nbsp;
-	 &nbsp;<font color="#000000">}</font>
-	<font color="#000000">}</font>
+			<font color="#00979c">int</font> <font color="#000000">encendido</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font>
+			<font color="#00979c">int</font> <font color="#000000">modoSonoro</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font>
 
-	<font color="#d35400">BLYNK_WRITE</font><font color="#000000">(</font><font color="#00979c">V1</font><font color="#000000">)</font> <font color="#000000">{</font> <font color="#434f54">&#47;&#47; Boton de prendido&#47;apagado</font>
- 
-	 &nbsp;<font color="#00979c">int</font> <font color="#000000">pinValue</font> <font color="#434f54">=</font> <font color="#000000">param</font><font color="#434f54">.</font><font color="#000000">asInt</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; valor de v1</font>
-	 &nbsp;&nbsp;&nbsp;
-	 &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">pinValue</font> <font color="#434f54">==</font> <font color="#000000">1</font><font color="#000000">)</font><font color="#000000">{</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">encendido</font><font color="#434f54">=</font><font color="#000000">1</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Blynk</font></b><font color="#434f54">.</font><font color="#d35400">virtualWrite</font><font color="#000000">(</font><font color="#00979c">V0</font><font color="#434f54">,</font> <font color="#005c5f">&#34;Aplicación encendida \n&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">message_to_whatsapp</font><font color="#000000">(</font><font color="#005c5f">&#34;Aplicación encendida&#34;</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;
-	 &nbsp;&nbsp;&nbsp;<font color="#000000">}</font> <font color="#5e6d03">else</font> <font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">pinValue</font> <font color="#434f54">==</font> <font color="#000000">0</font><font color="#000000">)</font> <font color="#000000">{</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">encendido</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Blynk</font></b><font color="#434f54">.</font><font color="#d35400">virtualWrite</font><font color="#000000">(</font><font color="#00979c">V0</font><font color="#434f54">,</font> <font color="#005c5f">&#34;Aplicacion apagada \n&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">message_to_whatsapp</font><font color="#000000">(</font><font color="#005c5f">&#34;Aplicacion apagada&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
-	 &nbsp;&nbsp;&nbsp;
-	 &nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34;V1 button value is: &#34;</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; printing value to serial monitor</font>
-	 &nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">pinValue</font><font color="#000000">)</font><font color="#000000">;</font>
-	<font color="#000000">}</font>
-	<font color="#d35400">BLYNK_WRITE</font><font color="#000000">(</font><font color="#00979c">V2</font><font color="#000000">)</font> <font color="#000000">{</font> <font color="#434f54">&#47;&#47; modo de notificacion</font>
-	 &nbsp;<font color="#00979c">int</font> <font color="#000000">pinValue</font> <font color="#434f54">=</font> <font color="#000000">param</font><font color="#434f54">.</font><font color="#000000">asInt</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">pinValue</font> <font color="#434f54">==</font> <font color="#000000">1</font><font color="#000000">)</font><font color="#000000">{</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#000000">modoSonoro</font><font color="#434f54">=</font><font color="#000000">1</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<b><font color="#d35400">Blynk</font></b><font color="#434f54">.</font><font color="#d35400">virtualWrite</font><font color="#000000">(</font><font color="#00979c">V0</font><font color="#434f54">,</font> <font color="#005c5f">&#34;Modo sonoro activado \n&#34;</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;
-	 &nbsp;&nbsp;&nbsp;<font color="#000000">message_to_whatsapp</font><font color="#000000">(</font><font color="#005c5f">&#34;Modo sonoro activado&#34;</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;
-	 &nbsp;<font color="#000000">}</font> <font color="#5e6d03">else</font> <font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">pinValue</font> <font color="#434f54">==</font> <font color="#000000">0</font><font color="#000000">)</font> <font color="#000000">{</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#000000">modoSonoro</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<b><font color="#d35400">Blynk</font></b><font color="#434f54">.</font><font color="#d35400">virtualWrite</font><font color="#000000">(</font><font color="#00979c">V0</font><font color="#434f54">,</font> <font color="#005c5f">&#34;Modo sonoro desactivado \n&#34;</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;
-	 &nbsp;&nbsp;&nbsp;<font color="#000000">message_to_whatsapp</font><font color="#000000">(</font><font color="#005c5f">&#34;Modo sonoro desactivado&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;<font color="#000000">}</font>
+			<font color="#00979c">void</font> <font color="#5e6d03">loop</font><font color="#000000">(</font><font color="#000000">)</font>
+			<font color="#000000">{</font>
+			 &nbsp;<b><font color="#d35400">Blynk</font></b><font color="#434f54">.</font><font color="#d35400">run</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;<font color="#5e6d03">if</font><font color="#000000">(</font><font color="#000000">encendido</font><font color="#434f54">==</font><font color="#000000">1</font><font color="#000000">)</font><font color="#000000">{</font>
+			 &nbsp;<font color="#5e6d03">if</font><font color="#000000">(</font><font color="#000000">SensorHCSR04</font><font color="#000000">(</font><font color="#000000">)</font><font color="#434f54">&lt;</font><font color="#000000">50.0</font> <font color="#434f54">&amp;&amp;</font> <font color="#000000">modoSonoro</font><font color="#434f54">==</font><font color="#000000">1</font><font color="#000000">)</font><font color="#000000">{</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">contador</font><font color="#434f54">=</font><font color="#000000">contador</font><font color="#434f54">+</font><font color="#000000">1</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">contador</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">message_to_whatsapp</font><font color="#000000">(</font><font color="#000000">mensajeAlarma</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Blynk</font></b><font color="#434f54">.</font><font color="#d35400">virtualWrite</font><font color="#000000">(</font><font color="#00979c">V0</font><font color="#434f54">,</font> <font color="#000000">mensajeAlarma</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">alarma</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;<font color="#000000">}</font><font color="#5e6d03">else</font> <font color="#5e6d03">if</font><font color="#000000">(</font><font color="#000000">SensorHCSR04</font><font color="#000000">(</font><font color="#000000">)</font><font color="#434f54">&lt;</font><font color="#000000">50.0</font> <font color="#434f54">&amp;&amp;</font> <font color="#000000">modoSonoro</font><font color="#434f54">==</font><font color="#000000">0</font><font color="#000000">)</font><font color="#000000">{</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">contador</font><font color="#434f54">=</font><font color="#000000">contador</font><font color="#434f54">+</font><font color="#000000">1</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">contador</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">message_to_whatsapp</font><font color="#000000">(</font><font color="#000000">mensajeAlarma</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Blynk</font></b><font color="#434f54">.</font><font color="#d35400">virtualWrite</font><font color="#000000">(</font><font color="#00979c">V0</font><font color="#434f54">,</font> <font color="#000000">mensajeAlarma</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">3000</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;<font color="#000000">}</font>
+			 &nbsp;&nbsp;
+			 &nbsp;<font color="#000000">}</font>
+			<font color="#000000">}</font>
 
-	<font color="#000000">}</font>
+			<font color="#d35400">BLYNK_WRITE</font><font color="#000000">(</font><font color="#00979c">V1</font><font color="#000000">)</font> <font color="#000000">{</font> <font color="#434f54">&#47;&#47; Boton de prendido&#47;apagado</font>
 
-	<font color="#00979c">double</font> <font color="#000000">SensorHCSR04</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">{</font>
-	 &nbsp;<font color="#00979c">long</font> <font color="#000000">duracion</font><font color="#000000">;</font>
-	 &nbsp;<font color="#00979c">double</font> <font color="#000000">distancia</font><font color="#000000">;</font>
-	 &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">trigger</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;<font color="#d35400">delayMicroseconds</font><font color="#000000">(</font><font color="#000000">2</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">trigger</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;<font color="#d35400">delayMicroseconds</font><font color="#000000">(</font><font color="#000000">10</font><font color="#000000">)</font> <font color="#000000">;</font>
-	 &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">trigger</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;<font color="#000000">duracion</font><font color="#434f54">=</font><font color="#d35400">pulseIn</font><font color="#000000">(</font><font color="#000000">echo</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;<font color="#000000">distancia</font><font color="#434f54">=</font> <font color="#000000">duracion</font><font color="#434f54">&#47;</font><font color="#000000">59</font><font color="#000000">;</font>
-	 &nbsp;<font color="#5e6d03">return</font> <font color="#000000">distancia</font><font color="#000000">;</font>
-	<font color="#000000">}</font>
+			 &nbsp;<font color="#00979c">int</font> <font color="#000000">pinValue</font> <font color="#434f54">=</font> <font color="#000000">param</font><font color="#434f54">.</font><font color="#000000">asInt</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; valor de v1</font>
+			 &nbsp;&nbsp;&nbsp;
+			 &nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">pinValue</font> <font color="#434f54">==</font> <font color="#000000">1</font><font color="#000000">)</font><font color="#000000">{</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">encendido</font><font color="#434f54">=</font><font color="#000000">1</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Blynk</font></b><font color="#434f54">.</font><font color="#d35400">virtualWrite</font><font color="#000000">(</font><font color="#00979c">V0</font><font color="#434f54">,</font> <font color="#005c5f">&#34;Aplicación encendida \n&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">message_to_whatsapp</font><font color="#000000">(</font><font color="#005c5f">&#34;Aplicación encendida&#34;</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;
+			 &nbsp;&nbsp;&nbsp;<font color="#000000">}</font> <font color="#5e6d03">else</font> <font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">pinValue</font> <font color="#434f54">==</font> <font color="#000000">0</font><font color="#000000">)</font> <font color="#000000">{</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">encendido</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Blynk</font></b><font color="#434f54">.</font><font color="#d35400">virtualWrite</font><font color="#000000">(</font><font color="#00979c">V0</font><font color="#434f54">,</font> <font color="#005c5f">&#34;Aplicacion apagada \n&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">message_to_whatsapp</font><font color="#000000">(</font><font color="#005c5f">&#34;Aplicacion apagada&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
+			 &nbsp;&nbsp;&nbsp;
+			 &nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34;V1 button value is: &#34;</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47; printing value to serial monitor</font>
+			 &nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">pinValue</font><font color="#000000">)</font><font color="#000000">;</font>
+			<font color="#000000">}</font>
+			<font color="#d35400">BLYNK_WRITE</font><font color="#000000">(</font><font color="#00979c">V2</font><font color="#000000">)</font> <font color="#000000">{</font> <font color="#434f54">&#47;&#47; modo de notificacion</font>
+			 &nbsp;<font color="#00979c">int</font> <font color="#000000">pinValue</font> <font color="#434f54">=</font> <font color="#000000">param</font><font color="#434f54">.</font><font color="#000000">asInt</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">pinValue</font> <font color="#434f54">==</font> <font color="#000000">1</font><font color="#000000">)</font><font color="#000000">{</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#000000">modoSonoro</font><font color="#434f54">=</font><font color="#000000">1</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<b><font color="#d35400">Blynk</font></b><font color="#434f54">.</font><font color="#d35400">virtualWrite</font><font color="#000000">(</font><font color="#00979c">V0</font><font color="#434f54">,</font> <font color="#005c5f">&#34;Modo sonoro activado \n&#34;</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;
+			 &nbsp;&nbsp;&nbsp;<font color="#000000">message_to_whatsapp</font><font color="#000000">(</font><font color="#005c5f">&#34;Modo sonoro activado&#34;</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;
+			 &nbsp;<font color="#000000">}</font> <font color="#5e6d03">else</font> <font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">pinValue</font> <font color="#434f54">==</font> <font color="#000000">0</font><font color="#000000">)</font> <font color="#000000">{</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#000000">modoSonoro</font><font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<b><font color="#d35400">Blynk</font></b><font color="#434f54">.</font><font color="#d35400">virtualWrite</font><font color="#000000">(</font><font color="#00979c">V0</font><font color="#434f54">,</font> <font color="#005c5f">&#34;Modo sonoro desactivado \n&#34;</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;&nbsp;
+			 &nbsp;&nbsp;&nbsp;<font color="#000000">message_to_whatsapp</font><font color="#000000">(</font><font color="#005c5f">&#34;Modo sonoro desactivado&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;<font color="#000000">}</font>
 
-	<font color="#00979c">String</font> <font color="#000000">urlencode</font><font color="#000000">(</font><font color="#00979c">String</font> <font color="#000000">str</font><font color="#000000">)</font> &nbsp;<font color="#434f54">&#47;&#47; codificar url</font>
-	<font color="#000000">{</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#00979c">String</font> <font color="#000000">encodedString</font><font color="#434f54">=</font><font color="#005c5f">&#34;&#34;</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#00979c">char</font> <font color="#000000">c</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#00979c">char</font> <font color="#000000">code0</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#00979c">char</font> <font color="#000000">code1</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#00979c">char</font> <font color="#000000">code2</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">i</font> <font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">i</font> <font color="#434f54">&lt;</font> <font color="#000000">str</font><font color="#434f54">.</font><font color="#d35400">length</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">++</font><font color="#000000">)</font><font color="#000000">{</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">c</font><font color="#434f54">=</font><font color="#000000">str</font><font color="#434f54">.</font><font color="#d35400">charAt</font><font color="#000000">(</font><font color="#000000">i</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">c</font> <font color="#434f54">==</font> <font color="#00979c">&#39; &#39;</font><font color="#000000">)</font><font color="#000000">{</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">encodedString</font><font color="#434f54">+=</font> <font color="#00979c">&#39;+&#39;</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">}</font> <font color="#5e6d03">else</font> <font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#d35400">isalnum</font><font color="#000000">(</font><font color="#000000">c</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">{</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">encodedString</font><font color="#434f54">+=</font><font color="#000000">c</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">}</font> <font color="#5e6d03">else</font><font color="#000000">{</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">code1</font><font color="#434f54">=</font><font color="#000000">(</font><font color="#000000">c</font> <font color="#434f54">&amp;</font> <font color="#000000">0xf</font><font color="#000000">)</font><font color="#434f54">+</font><font color="#00979c">&#39;0&#39;</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">(</font><font color="#000000">c</font> <font color="#434f54">&amp;</font> <font color="#000000">0xf</font><font color="#000000">)</font> <font color="#434f54">&gt;</font><font color="#000000">9</font><font color="#000000">)</font><font color="#000000">{</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">code1</font><font color="#434f54">=</font><font color="#000000">(</font><font color="#000000">c</font> <font color="#434f54">&amp;</font> <font color="#000000">0xf</font><font color="#000000">)</font> <font color="#434f54">-</font> <font color="#000000">10</font> <font color="#434f54">+</font> <font color="#00979c">&#39;A&#39;</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">c</font><font color="#434f54">=</font><font color="#000000">(</font><font color="#000000">c</font><font color="#434f54">&gt;&gt;</font><font color="#000000">4</font><font color="#000000">)</font><font color="#434f54">&amp;</font><font color="#000000">0xf</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">code0</font><font color="#434f54">=</font><font color="#000000">c</font><font color="#434f54">+</font><font color="#00979c">&#39;0&#39;</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">c</font> <font color="#434f54">&gt;</font> <font color="#000000">9</font><font color="#000000">)</font><font color="#000000">{</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">code0</font><font color="#434f54">=</font><font color="#000000">c</font> <font color="#434f54">-</font> <font color="#000000">10</font> <font color="#434f54">+</font> <font color="#00979c">&#39;A&#39;</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">code2</font><font color="#434f54">=</font><font color="#00979c">&#39;\0&#39;</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">encodedString</font><font color="#434f54">+=</font><font color="#00979c">&#39;%&#39;</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">encodedString</font><font color="#434f54">+=</font><font color="#000000">code0</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">encodedString</font><font color="#434f54">+=</font><font color="#000000">code1</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;encodedString+=code2;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">yield</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#5e6d03">return</font> <font color="#000000">encodedString</font><font color="#000000">;</font>
-	<font color="#000000">}</font>
+			<font color="#000000">}</font>
 
-	<font color="#00979c">void</font> &nbsp;<font color="#000000">message_to_whatsapp</font><font color="#000000">(</font><font color="#00979c">String</font> <font color="#000000">mensaje</font><font color="#000000">)</font><font color="#000000">{</font>
-	 &nbsp;&nbsp;&nbsp;
-	 &nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34;connecting to &#34;</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;whatsapp&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">WiFiClient</font> <font color="#d35400">client</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">HTTPClient</font></b> <font color="#000000">http</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;Declare an object of class HTTPClient</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;Specify request destination</font>
+			<font color="#00979c">double</font> <font color="#000000">SensorHCSR04</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">{</font>
+			 &nbsp;<font color="#00979c">long</font> <font color="#000000">duracion</font><font color="#000000">;</font>
+			 &nbsp;<font color="#00979c">double</font> <font color="#000000">distancia</font><font color="#000000">;</font>
+			 &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">trigger</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;<font color="#d35400">delayMicroseconds</font><font color="#000000">(</font><font color="#000000">2</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">trigger</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;<font color="#d35400">delayMicroseconds</font><font color="#000000">(</font><font color="#000000">10</font><font color="#000000">)</font> <font color="#000000">;</font>
+			 &nbsp;<font color="#d35400">digitalWrite</font><font color="#000000">(</font><font color="#000000">trigger</font><font color="#434f54">,</font> <font color="#00979c">LOW</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;<font color="#000000">duracion</font><font color="#434f54">=</font><font color="#d35400">pulseIn</font><font color="#000000">(</font><font color="#000000">echo</font><font color="#434f54">,</font> <font color="#00979c">HIGH</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;<font color="#000000">distancia</font><font color="#434f54">=</font> <font color="#000000">duracion</font><font color="#434f54">&#47;</font><font color="#000000">59</font><font color="#000000">;</font>
+			 &nbsp;<font color="#5e6d03">return</font> <font color="#000000">distancia</font><font color="#000000">;</font>
+			<font color="#000000">}</font>
 
- 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">url</font> <font color="#434f54">=</font> <font color="#005c5f">&#34;http:&#47;&#47;api.callmebot.com&#47;whatsapp.php?phone=&#34;</font><font color="#434f54">+</font><font color="#000000">phone_number</font><font color="#434f54">+</font><font color="#005c5f">&#34;&amp;text=&#34;</font><font color="#434f54">+</font><font color="#000000">urlencode</font><font color="#000000">(</font><font color="#000000">mensaje</font><font color="#000000">)</font><font color="#434f54">+</font><font color="#005c5f">&#34;&amp;apikey=&#34;</font><font color="#434f54">+</font><font color="#000000">apiKey</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">http</font><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#d35400">client</font><font color="#434f54">,</font><font color="#000000">url</font><font color="#000000">)</font><font color="#000000">;</font> 
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00979c">int</font> <font color="#000000">httpCode</font> <font color="#434f54">=</font> <font color="#000000">http</font><font color="#434f54">.</font><font color="#d35400">GET</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;Send the request</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">httpCode</font> <font color="#434f54">&gt;</font> <font color="#000000">0</font><font color="#000000">)</font> 
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">{</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00979c">String</font> <font color="#000000">payload</font> <font color="#434f54">=</font> <font color="#000000">http</font><font color="#434f54">.</font><font color="#d35400">getString</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;Get the request response payload</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">payload</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;Print the response payload</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">http</font><font color="#434f54">.</font><font color="#d35400">end</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;Close connection</font>
-	 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;Mensaje enviado&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;
-	<font color="#000000">}</font>
+			<font color="#00979c">String</font> <font color="#000000">urlencode</font><font color="#000000">(</font><font color="#00979c">String</font> <font color="#000000">str</font><font color="#000000">)</font> &nbsp;<font color="#434f54">&#47;&#47; codificar url</font>
+			<font color="#000000">{</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#00979c">String</font> <font color="#000000">encodedString</font><font color="#434f54">=</font><font color="#005c5f">&#34;&#34;</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#00979c">char</font> <font color="#000000">c</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#00979c">char</font> <font color="#000000">code0</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#00979c">char</font> <font color="#000000">code1</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#00979c">char</font> <font color="#000000">code2</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#5e6d03">for</font> <font color="#000000">(</font><font color="#00979c">int</font> <font color="#000000">i</font> <font color="#434f54">=</font><font color="#000000">0</font><font color="#000000">;</font> <font color="#000000">i</font> <font color="#434f54">&lt;</font> <font color="#000000">str</font><font color="#434f54">.</font><font color="#d35400">length</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#000000">i</font><font color="#434f54">++</font><font color="#000000">)</font><font color="#000000">{</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">c</font><font color="#434f54">=</font><font color="#000000">str</font><font color="#434f54">.</font><font color="#d35400">charAt</font><font color="#000000">(</font><font color="#000000">i</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">c</font> <font color="#434f54">==</font> <font color="#00979c">&#39; &#39;</font><font color="#000000">)</font><font color="#000000">{</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">encodedString</font><font color="#434f54">+=</font> <font color="#00979c">&#39;+&#39;</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">}</font> <font color="#5e6d03">else</font> <font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#d35400">isalnum</font><font color="#000000">(</font><font color="#000000">c</font><font color="#000000">)</font><font color="#000000">)</font><font color="#000000">{</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">encodedString</font><font color="#434f54">+=</font><font color="#000000">c</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">}</font> <font color="#5e6d03">else</font><font color="#000000">{</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">code1</font><font color="#434f54">=</font><font color="#000000">(</font><font color="#000000">c</font> <font color="#434f54">&amp;</font> <font color="#000000">0xf</font><font color="#000000">)</font><font color="#434f54">+</font><font color="#00979c">&#39;0&#39;</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">(</font><font color="#000000">c</font> <font color="#434f54">&amp;</font> <font color="#000000">0xf</font><font color="#000000">)</font> <font color="#434f54">&gt;</font><font color="#000000">9</font><font color="#000000">)</font><font color="#000000">{</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">code1</font><font color="#434f54">=</font><font color="#000000">(</font><font color="#000000">c</font> <font color="#434f54">&amp;</font> <font color="#000000">0xf</font><font color="#000000">)</font> <font color="#434f54">-</font> <font color="#000000">10</font> <font color="#434f54">+</font> <font color="#00979c">&#39;A&#39;</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">c</font><font color="#434f54">=</font><font color="#000000">(</font><font color="#000000">c</font><font color="#434f54">&gt;&gt;</font><font color="#000000">4</font><font color="#000000">)</font><font color="#434f54">&amp;</font><font color="#000000">0xf</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">code0</font><font color="#434f54">=</font><font color="#000000">c</font><font color="#434f54">+</font><font color="#00979c">&#39;0&#39;</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">c</font> <font color="#434f54">&gt;</font> <font color="#000000">9</font><font color="#000000">)</font><font color="#000000">{</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">code0</font><font color="#434f54">=</font><font color="#000000">c</font> <font color="#434f54">-</font> <font color="#000000">10</font> <font color="#434f54">+</font> <font color="#00979c">&#39;A&#39;</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">code2</font><font color="#434f54">=</font><font color="#00979c">&#39;\0&#39;</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">encodedString</font><font color="#434f54">+=</font><font color="#00979c">&#39;%&#39;</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">encodedString</font><font color="#434f54">+=</font><font color="#000000">code0</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">encodedString</font><font color="#434f54">+=</font><font color="#000000">code1</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;encodedString+=code2;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">yield</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#5e6d03">return</font> <font color="#000000">encodedString</font><font color="#000000">;</font>
+			<font color="#000000">}</font>
 
-	<font color="#00979c">void</font> <font color="#000000">alarma</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">{</font>
-	 &nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">329</font><font color="#434f54">,</font> <font color="#000000">611.606745313</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">679.563050347</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">369</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">493</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">415</font><font color="#434f54">,</font> <font color="#000000">611.606745313</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">679.563050347</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">369</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">493</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">415</font><font color="#434f54">,</font> <font color="#000000">611.606745313</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">679.563050347</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">415</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">554</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">493</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">466</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">369</font><font color="#434f54">,</font> <font color="#000000">611.606745313</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">679.563050347</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">277</font><font color="#434f54">,</font> <font color="#000000">75.8928078125</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">84.3253420139</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">329</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">277</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">415</font><font color="#434f54">,</font> <font color="#000000">305.484495312</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">339.427217014</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">369</font><font color="#434f54">,</font> <font color="#000000">152.423370312</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">169.359300347</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">369</font><font color="#434f54">,</font> <font color="#000000">152.423370312</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">169.359300347</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">369</font><font color="#434f54">,</font> <font color="#000000">458.545620313</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">509.495133681</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">43.2255954861</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">1318</font><font color="#434f54">,</font> <font color="#000000">37.6275265625</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">41.8083628472</font><font color="#000000">)</font><font color="#000000">;</font>
-	 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;
-	<font color="#000000">}</font>
+			<font color="#00979c">void</font> &nbsp;<font color="#000000">message_to_whatsapp</font><font color="#000000">(</font><font color="#00979c">String</font> <font color="#000000">mensaje</font><font color="#000000">)</font><font color="#000000">{</font>
+			 &nbsp;&nbsp;&nbsp;
+			 &nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">print</font><font color="#000000">(</font><font color="#005c5f">&#34;connecting to &#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;whatsapp&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d35400">WiFiClient</font> <font color="#d35400">client</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">HTTPClient</font></b> <font color="#000000">http</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;Declare an object of class HTTPClient</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#434f54">&#47;&#47;Specify request destination</font>
+
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">url</font> <font color="#434f54">=</font> <font color="#005c5f">&#34;http:&#47;&#47;api.callmebot.com&#47;whatsapp.php?phone=&#34;</font><font color="#434f54">+</font><font color="#000000">phone_number</font><font color="#434f54">+</font><font color="#005c5f">&#34;&amp;text=&#34;</font><font color="#434f54">+</font><font color="#000000">urlencode</font><font color="#000000">(</font><font color="#000000">mensaje</font><font color="#000000">)</font><font color="#434f54">+</font><font color="#005c5f">&#34;&amp;apikey=&#34;</font><font color="#434f54">+</font><font color="#000000">apiKey</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">http</font><font color="#434f54">.</font><font color="#d35400">begin</font><font color="#000000">(</font><font color="#d35400">client</font><font color="#434f54">,</font><font color="#000000">url</font><font color="#000000">)</font><font color="#000000">;</font> 
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00979c">int</font> <font color="#000000">httpCode</font> <font color="#434f54">=</font> <font color="#000000">http</font><font color="#434f54">.</font><font color="#d35400">GET</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;Send the request</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#5e6d03">if</font> <font color="#000000">(</font><font color="#000000">httpCode</font> <font color="#434f54">&gt;</font> <font color="#000000">0</font><font color="#000000">)</font> 
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">{</font> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#00979c">String</font> <font color="#000000">payload</font> <font color="#434f54">=</font> <font color="#000000">http</font><font color="#434f54">.</font><font color="#d35400">getString</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;Get the request response payload</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#000000">payload</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;Print the response payload</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">}</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#000000">http</font><font color="#434f54">.</font><font color="#d35400">end</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">;</font> <font color="#434f54">&#47;&#47;Close connection</font>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><font color="#d35400">Serial</font></b><font color="#434f54">.</font><font color="#d35400">println</font><font color="#000000">(</font><font color="#005c5f">&#34;Mensaje enviado&#34;</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;
+			<font color="#000000">}</font>
+
+			<font color="#00979c">void</font> <font color="#000000">alarma</font><font color="#000000">(</font><font color="#000000">)</font><font color="#000000">{</font>
+			 &nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">329</font><font color="#434f54">,</font> <font color="#000000">611.606745313</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">679.563050347</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">369</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">493</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">415</font><font color="#434f54">,</font> <font color="#000000">611.606745313</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">679.563050347</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">369</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">493</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">415</font><font color="#434f54">,</font> <font color="#000000">611.606745313</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">679.563050347</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">415</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">554</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">493</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">466</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">369</font><font color="#434f54">,</font> <font color="#000000">611.606745313</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">679.563050347</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">277</font><font color="#434f54">,</font> <font color="#000000">75.8928078125</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">84.3253420139</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">329</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">277</font><font color="#434f54">,</font> <font color="#000000">228.953932812</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">254.393258681</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">415</font><font color="#434f54">,</font> <font color="#000000">305.484495312</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">339.427217014</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">369</font><font color="#434f54">,</font> <font color="#000000">152.423370312</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">169.359300347</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">369</font><font color="#434f54">,</font> <font color="#000000">152.423370312</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">169.359300347</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">369</font><font color="#434f54">,</font> <font color="#000000">458.545620313</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">509.495133681</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">43.2255954861</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">tone</font><font color="#000000">(</font><font color="#000000">tonePin</font><font color="#434f54">,</font> <font color="#000000">1318</font><font color="#434f54">,</font> <font color="#000000">37.6275265625</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">41.8083628472</font><font color="#000000">)</font><font color="#000000">;</font>
+			 &nbsp;&nbsp;&nbsp;<font color="#d35400">delay</font><font color="#000000">(</font><font color="#000000">0.708616319444</font><font color="#000000">)</font><font color="#000000">;</font> &nbsp;
+			<font color="#000000">}</font>
 
 </pre>
         </div>
